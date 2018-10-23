@@ -35,7 +35,7 @@ namespace GapInsurance.Web
 
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/build";
+                configuration.RootPath = "Apps/gap-insurance/build";
             });
         }
 
