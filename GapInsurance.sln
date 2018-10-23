@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GapInsurance.Web", "GapInsurance.Web\GapInsurance.Web.csproj", "{B0B57F39-761E-4F5B-BD78-A173D3670F97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Web", "GapInsurance.Web\GapInsurance.Web.csproj", "{B0B57F39-761E-4F5B-BD78-A173D3670F97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Tests", "GapInsurance.Tests\GapInsurance.Tests.csproj", "{EFB0412C-1E13-4080-8FEE-65A9B3A43236}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Services", "GapInsurance.Services\GapInsurance.Services.csproj", "{806DFA00-B550-4F6B-8D62-CE0B71CBE3FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Repositories", "GapInsurance.Repositories\GapInsurance.Repositories.csproj", "{0F73C911-9260-4782-923E-C7CC7916F6CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Common", "GapInsurance.Common\GapInsurance.Common.csproj", "{72DBB5A3-C461-4078-88E6-0DD1AC81753B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GapInsurance.Models", "GapInsurance.Models\GapInsurance.Models.csproj", "{EF50A0E5-BA48-4111-976B-90BC384D2BD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{B0B57F39-761E-4F5B-BD78-A173D3670F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0B57F39-761E-4F5B-BD78-A173D3670F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0B57F39-761E-4F5B-BD78-A173D3670F97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB0412C-1E13-4080-8FEE-65A9B3A43236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB0412C-1E13-4080-8FEE-65A9B3A43236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB0412C-1E13-4080-8FEE-65A9B3A43236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB0412C-1E13-4080-8FEE-65A9B3A43236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806DFA00-B550-4F6B-8D62-CE0B71CBE3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806DFA00-B550-4F6B-8D62-CE0B71CBE3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806DFA00-B550-4F6B-8D62-CE0B71CBE3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806DFA00-B550-4F6B-8D62-CE0B71CBE3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F73C911-9260-4782-923E-C7CC7916F6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F73C911-9260-4782-923E-C7CC7916F6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F73C911-9260-4782-923E-C7CC7916F6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F73C911-9260-4782-923E-C7CC7916F6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DBB5A3-C461-4078-88E6-0DD1AC81753B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DBB5A3-C461-4078-88E6-0DD1AC81753B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DBB5A3-C461-4078-88E6-0DD1AC81753B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DBB5A3-C461-4078-88E6-0DD1AC81753B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF50A0E5-BA48-4111-976B-90BC384D2BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF50A0E5-BA48-4111-976B-90BC384D2BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF50A0E5-BA48-4111-976B-90BC384D2BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF50A0E5-BA48-4111-976B-90BC384D2BD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
