@@ -1,21 +1,57 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap'
+import { Table, Alert } from 'react-bootstrap'
 
 class Home extends Component {
-  login() {
-    this.props.auth.login();
-  }
+
   render() {
-    const { isAuthenticated } = this.props.auth;
     return (
-      <div className="container">{isAuthenticated() && (<h4>You are logged in!</h4>)}
-        {!isAuthenticated() && (<h4>You are not logged in! Please{' '}
-          <Button
-            onClick={this.login.bind(this)}
-          >
-            Log In
-        </Button>
-          {' '}to continue.</h4>)}
+      <div>
+        <br />
+        <Alert variant={'info'}>
+          Available policies
+        </Alert>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+          </tbody>
+        </Table>
       </div>
     );
   }

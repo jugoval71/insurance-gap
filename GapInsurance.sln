@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Repositories",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Common", "GapInsurance.Common\GapInsurance.Common.csproj", "{72DBB5A3-C461-4078-88E6-0DD1AC81753B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GapInsurance.Models", "GapInsurance.Models\GapInsurance.Models.csproj", "{EF50A0E5-BA48-4111-976B-90BC384D2BD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GapInsurance.Models", "GapInsurance.Models\GapInsurance.Models.csproj", "{EF50A0E5-BA48-4111-976B-90BC384D2BD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GapInsurance.Entities", "GapInsurance.Entities\GapInsurance.Entities.csproj", "{15771E98-28B7-45CD-844A-6ED74D93EA69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{EF50A0E5-BA48-4111-976B-90BC384D2BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF50A0E5-BA48-4111-976B-90BC384D2BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF50A0E5-BA48-4111-976B-90BC384D2BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15771E98-28B7-45CD-844A-6ED74D93EA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15771E98-28B7-45CD-844A-6ED74D93EA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15771E98-28B7-45CD-844A-6ED74D93EA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15771E98-28B7-45CD-844A-6ED74D93EA69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

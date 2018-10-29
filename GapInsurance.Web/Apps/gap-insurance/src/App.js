@@ -1,62 +1,41 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
-import './App.css';
+import { Route, Switch, Redirect } from 'react-router';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router'
+
+import { PrivateRoute } from './Auth/PrivateRoute';
+import HeaderContainer from './Header/HeaderContainer';
+import Callback from './Callback/Callback';
+import HomeContainer from './Home/HomeContainer';
+import { Container } from 'react-bootstrap'
+import store from './store/configureStore';
 
 class App extends Component {
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
 
-  login() {
-    this.props.auth.login();
-  }
-
-  logout() {
-    this.props.auth.logout();
+  handleAuthentication = ({ location }) => {
+    if (/access_token|id_token|error/.test(location.hash)) {
+      this.props.auth.handleAuthentication();
+    }
   }
 
   render() {
-    const { isAuthenticated } = this.props.auth;
-
     return (
-      <div>
-        <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <Button href="#">Gap - Insurance</Button>
-            </Navbar.Brand>
-            <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'home')}
-            >
-              Home
-            </Button>
-            {
-              !isAuthenticated() && (
-                <Button
-                  id="qsLoginBtn"
-                  className="btn-margin"
-                  onClick={this.login.bind(this)}
-                >
-                  Log In
-                  </Button>
-              )
-            }
-            {
-              isAuthenticated() && (
-                <Button
-                  id="qsLogoutBtn"
-                  className="btn-margin"
-                  onClick={this.logout.bind(this)}
-                >
-                  Log Out
-                  </Button>
-              )
-            }
-          </Navbar.Header>
-        </Navbar>
-      </div>
+      <Provider store={store}>
+        <ConnectedRouter history={this.props.history}>
+          <Container>
+            <div className="App">
+              <HeaderContainer auth={this.props.auth} history={this.props.history} />
+              <div className="wrap">
+                <Switch>
+                  <PrivateRoute name="home" exact path='/home' component={HomeContainer} auth={this.props.auth} />
+                  <Route path="/callback" render={(props) => { this.handleAuthentication(props); return <Callback {...props} /> }} />
+                  <Redirect from="/" to="home" />
+                </Switch>
+              </div>
+            </div>
+          </Container>
+        </ConnectedRouter>
+      </Provider>
     );
   }
 }

@@ -1,11 +1,13 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import { makeMainRoutes } from './routes';
+import App from './App';
+import  { history } from './store/configureStore';
+import Auth from './Auth/Auth';
 
-const routes = makeMainRoutes();
+const auth = new Auth(history);
 
-ReactDOM.render(
-  routes,
-  document.getElementById('root')
-);
+// eslint-disable-next-line no-unused-vars
+window._ = window._ || require('lodash');
+// eslint-disable-next-line no-unused-vars
+window.axios = window.axios || require('axios');
+ReactDOM.render(<App history={history} auth={auth}/>, document.getElementById('root'));

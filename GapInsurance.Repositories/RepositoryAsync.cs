@@ -74,13 +74,6 @@ namespace GapInsurance.Repositories
             return _dbSet.AddRangeAsync(entities, cancellationToken);
         }
 
-
-        [Obsolete("Use get list ")]
-        public IEnumerable<T> GetAsync(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
         public void UpdateAsync(T entity)
         {
             _dbSet.Update(entity);

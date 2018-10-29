@@ -37,6 +37,9 @@ namespace GapInsurance.Web
             {
                 configuration.RootPath = "Apps/gap-insurance/build";
             });
+
+            services.RegisterServices(Configuration);
+            services.RegisterRepositories(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

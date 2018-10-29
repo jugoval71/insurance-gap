@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.2.6.11" Id="cba47279-0950-4257-bb2c-e4d5e72a52a4" entityContainerName="Insurance" namespace="GapInsurance.Entities" automaticMigrationsEnabled="false" entityOutputDirectory="Entities\Generated" contextOutputDirectory="Context\Generated" enumOutputDirectory="Enums\Generated" entityFrameworkVersion="EFCore" connectionStringName="InsuranceConnection" defaultCollectionClass="Collection" transformOnSave="false" defaultIdentityType="Guid" showCascadeDeletes="false" databaseType="None" warnOnMissingDocumentation="false" structOutputDirectory="Entities\Generated" xmlns="http://schemas.microsoft.com/dsltools/EFModel">
+  <enums>
+    <modelRootHasEnums Id="1e8c18fc-4e44-4f88-a194-e4c156143e10">
+      <modelEnum Id="b48b76db-6132-4704-b3ba-d1b593ed1127" namespace="GapInsurance.Entities" name="RiskType" outputDirectory="Enums\Generated">
+        <values>
+          <modelEnumHasValues Id="b60a9585-72d7-4187-a17e-073b025ab12b">
+            <modelEnumValue Id="cf97e8d4-fb1b-4a5e-a97b-a330b6ddf843" name="Low" value="1" />
+          </modelEnumHasValues>
+          <modelEnumHasValues Id="eec35257-e199-4e54-b785-f2457015cc7b">
+            <modelEnumValue Id="9be58048-f7ad-4d27-978c-aabd92c416ba" name="Mid" value="2" />
+          </modelEnumHasValues>
+          <modelEnumHasValues Id="b1d2c0dc-b5b2-442f-ad39-ee1f7acd4813">
+            <modelEnumValue Id="6c37aa9c-b5de-416f-bbef-565c079628fc" name="MidHigh" value="3" />
+          </modelEnumHasValues>
+          <modelEnumHasValues Id="a20b8e21-fd45-4d78-9f78-53d04e8600fa">
+            <modelEnumValue Id="b5bb03e3-d43d-4a3e-b94b-bdb07bb2e05a" name="High" value="4" />
+          </modelEnumHasValues>
+        </values>
+      </modelEnum>
+    </modelRootHasEnums>
+  </enums>
+  <classes>
+    <modelRootHasClasses Id="7930ed7e-61e5-420e-88db-2aae722345d1">
+      <modelClass Id="c210e745-9db0-48b1-8414-086c8f65c937" tableName="Policies" databaseSchema="dbo" namespace="GapInsurance.Entities" dbSetName="Policies" name="Policy" outputDirectory="Entities\Generated">
+        <unidirectionalTargets>
+          <unidirectionalAssociation Id="c6646bcb-68b7-47ed-9017-01dfced72d6f" targetPropertyName="PolicyTypes" collectionClass="Collection" sourceRole="Principal" targetRole="Dependent" foreignKeyLocation="None">
+            <modelClassMoniker Id="94d18055-6502-426a-af9a-018a72d96726" />
+          </unidirectionalAssociation>
+        </unidirectionalTargets>
+        <attributes>
+          <modelAttribute Id="e3805d94-3d36-45c7-b857-67fb3e53dcc2" type="Guid" isIdentity="true" required="true" indexed="false" indexedUnique="false" stringType="None" name="Id" columnName="Id" columnType="default" />
+          <modelAttribute Id="04a1345c-616f-4483-85a2-e382d9991ba2" required="true" maxLength="20" indexed="false" indexedUnique="false" stringType="None" name="Name" columnName="Name" columnType="default" />
+          <modelAttribute Id="fd32960f-91cd-4c32-9112-6f1032b46a1a" required="true" maxLength="200" indexed="false" indexedUnique="false" stringType="None" name="Description" columnName="Description" columnType="default" />
+          <modelAttribute Id="77f522b4-a877-4ce4-893f-0c2eec79ada8" type="DateTime" required="true" indexed="false" indexedUnique="false" stringType="None" name="StartDate" columnName="StartDate" columnType="default" />
+          <modelAttribute Id="d2589165-38d3-4087-b0e9-4ffd833e7766" type="Int32" required="true" indexed="false" indexedUnique="false" stringType="None" name="DurationMonths" columnName="DurationMonths" columnType="default" />
+          <modelAttribute Id="d2fed0b3-2fa4-4ce2-8919-b23691906a01" type="Decimal" required="true" indexed="false" indexedUnique="false" stringType="None" name="Price" columnName="Price" columnType="Decimal(18,2)" isColumnTypeTracking="false" />
+          <modelAttribute Id="1dfdd9c8-025a-48b9-b1fd-3d8431d43ceb" type="RiskType" required="true" indexed="false" indexedUnique="false" stringType="None" name="Risk" columnName="Risk" columnType="default" />
+          <modelAttribute Id="c2de2fca-c209-4fba-90f7-99c67d82059d" required="true" maxLength="20" indexed="false" indexedUnique="false" stringType="None" name="User" columnName="User" columnType="default" />
+        </attributes>
+      </modelClass>
+    </modelRootHasClasses>
+    <modelRootHasClasses Id="cc199ae7-caaf-402c-958f-339048d3ee43">
+      <modelClass Id="94d18055-6502-426a-af9a-018a72d96726" tableName="PolicyTypes" databaseSchema="dbo" namespace="GapInsurance.Entities" dbSetName="PolicyTypes" name="PolicyType" outputDirectory="Entities\Generated">
+        <attributes>
+          <modelAttribute Id="b41c8108-a405-43e0-8e09-e7781212773d" type="Guid" isIdentity="true" required="true" indexed="false" indexedUnique="false" stringType="None" name="Id" columnName="Id" columnType="default" />
+          <modelAttribute Id="8c73f659-ea6a-4d9a-baf7-118f9d816b84" required="true" maxLength="100" indexed="false" indexedUnique="false" stringType="None" name="Comment" columnName="Comment" columnType="default" />
+          <modelAttribute Id="2a5f5de0-27b2-4d46-b618-2e563557f856" type="Decimal" required="true" indexed="false" indexedUnique="false" stringType="None" name="Coverage" columnName="Coverage" columnType="Decimal(5,2)" isColumnTypeTracking="false" />
+        </attributes>
+      </modelClass>
+    </modelRootHasClasses>
+    <modelRootHasClasses Id="ea66e574-7d5d-4689-b350-d0998f491ddc">
+      <modelClass Id="348d6e5c-be30-441b-9329-9718958f66b9" tableName="Types" databaseSchema="dbo" namespace="GapInsurance.Entities" dbSetName="Types" name="Type" outputDirectory="Entities\Generated">
+        <unidirectionalTargets>
+          <unidirectionalAssociation Id="4ee2697d-716f-4ba9-b67f-93cfb174411d" targetPropertyName="PolicyTypes" collectionClass="Collection" sourceRole="Principal" targetRole="Dependent" foreignKeyLocation="None">
+            <modelClassMoniker Id="94d18055-6502-426a-af9a-018a72d96726" />
+          </unidirectionalAssociation>
+        </unidirectionalTargets>
+        <attributes>
+          <modelAttribute Id="3419d06e-bc6e-456b-85b7-2543a804f2e6" type="Guid" isIdentity="true" required="true" indexed="false" indexedUnique="false" stringType="None" name="Id" columnName="Id" columnType="default" />
+          <modelAttribute Id="2ae1237b-f037-43d7-a5da-e425140f0804" required="true" maxLength="20" indexed="false" indexedUnique="false" stringType="None" name="Name" columnName="Name" columnType="default" />
+          <modelAttribute Id="3fbbf611-2aeb-45d2-8d8c-9cd0190baf7d" required="true" maxLength="3" indexed="false" indexedUnique="false" stringType="None" name="Code" columnName="Code" columnType="default" />
+        </attributes>
+      </modelClass>
+    </modelRootHasClasses>
+  </classes>
+</modelRoot>

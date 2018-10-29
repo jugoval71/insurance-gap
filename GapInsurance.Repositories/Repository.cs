@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
@@ -63,19 +62,6 @@ namespace GapInsurance.Repositories
         public void Delete(IEnumerable<T> entities)
         {
             _dbSet.RemoveRange(entities);
-        }
-
-
-        [Obsolete("Method is replaced by GetList")]
-        public IEnumerable<T> Get()
-        {
-            return _dbSet.AsEnumerable();
-        }
-
-        [Obsolete("Method is replaced by GetList")]
-        public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
-        {
-            return _dbSet.Where(predicate).AsEnumerable();
         }
 
         public void Update(T entity)

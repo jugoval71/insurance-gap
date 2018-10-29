@@ -16,7 +16,6 @@ namespace GapInsurance.Repositories
             Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
             bool disableTracking = true);
 
-        IEnumerable<T> GetAsync(Expression<Func<T, bool>> predicate);
 
         Task<IPaginate<T>> GetListAsync(Expression<Func<T, bool>> predicate = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
